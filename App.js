@@ -15,18 +15,30 @@ export default function App() {
     setIsAddMode(false);
   };
 
-  // const removeGoalHandler = goalId => {
-  //   setCourseGoals(currentGoals => {
-  //     return currentGoals.filter(goal => )
-  //   })
-  // }
+  const removeGoalHandler = goalId => {
+    setCourseGoals(currentGoals => {
+      return currentGoals.filter(goal => goal.id !== goalId);
+    });
+  };
+
+  const cancelGoalAdditionHandler = () => {
+    setIsAddMode(false);
+  };
 
 
 
   return (
     <View style={styles.screen}>
-      <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
-      <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} />
+      <Button
+        title="Add New Goal"
+        onPress={() => setIsAddMode(true)}
+      />
+      <GoalInput
+        visible={isAddMode}
+        onAddGoal={addGoalHandler}
+        onCancel={cancelGoalAdditionHandler}
+      />
+
     </View>
   );
 

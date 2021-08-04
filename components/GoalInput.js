@@ -20,14 +20,16 @@ const GoalInput = props => {
                     style={styles.input}
                     placeholder="Course Goal"
                     onChangeText={goalInputHandler}
-                    value={enteredGoal} />
+                    value={enteredGoal}
+                />
 
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
                         <Button
                             title="CANCEL"
                             color="red"
-                            onPress={props.onCancel} />
+                            onPress={props.onCancel}
+                        />
                     </View>
                     <View>
                         <Button title="ADD" onPress={addGoalHandler} />
